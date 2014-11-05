@@ -9,6 +9,9 @@ var mysql = require('mysql'), myConnection = require('express-myconnection');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var loginpage = require('./routes/loginpage');
+var signuppage = require('./routes/signuppage');
+var signup = require('./routes/signup');
+var login = require('./routes/login');
 
 var app = express();
 
@@ -34,6 +37,9 @@ app.use(myConnection(mysql, {
 app.use('/', index);
 app.use('/loginpage', loginpage);
 app.use('/users', users);
+app.use('/signuppage', signuppage);
+app.use('/signup', signup);
+app.use('/login', login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
