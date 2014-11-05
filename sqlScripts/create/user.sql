@@ -1,8 +1,9 @@
 CREATE TABLE user
 (
-	user_id varchar(30),
+	user_id INT AUTO_INCREMENT,
 	name varchar(30),
 	email varchar(30),
 	password varchar(30),
-	professor BOOL
+	professor BOOL,
+	CONSTRAINT user_pk PRIMARY KEY (user_id)
 );

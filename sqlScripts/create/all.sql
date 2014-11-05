@@ -8,3 +8,10 @@ DROP TABLE IF EXISTS event;
 DROP TABLE IF EXISTS user;
 
 \. user.sql
+\. event.sql
+\. course.sql
+\. note.sql
+\. user_course.sql
+\. note_keyword.sql
+\. event_day.sql
+\. event_guest.sql
