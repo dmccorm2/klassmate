@@ -3,6 +3,6 @@ extends layout
 block content
   div.loginbox
     form(name="login", action="/login", method="post")
-      input(type="text", name="user")
-      input(type="password", name="pass")
+      input(id="user", type="text", name="user")
+      input(if="user", type="password", name="pass")
       input(type="submit", value="login")
