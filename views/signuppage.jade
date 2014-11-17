@@ -3,6 +3,10 @@ extends layout
 block content
   div.loginbox
     form(name="login", action="/signup", method="post")
-      input(id="user", type="text", name="user", placeholder="username")
-      input(id="user", type="password", name="pass", placeholder="password")
-      input(type="submit", value="login")
+      input(id="name", type="text", name="name", placeholder="Name")
+      input(id="email", type="text", name="email", placeholder="Email")
+      input(id="pass", type="password", name="pass", placeholder="Password")
+      input(type="submit", value="Sign Up!")
+
+  br
+  a(href="loginpage") Already a user? Log In!

@@ -1,0 +1,15 @@
+DELIMITER //
+CREATE FUNCTION getUserName(email VARCHAR(30))
+RETURNS TEXT
+BEGIN
+	DECLARE ret VARCHAR(30);
+
+	SELECT name
+	INTO ret
+	FROM user 
+	WHERE email = email;
+
+	RETURN ret;
+END//
+DELIMITER ;
+

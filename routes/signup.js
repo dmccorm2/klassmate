@@ -12,8 +12,15 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
     req.getConnection(function (err, connection) {
         var response=req.body;
-	console.log(response['user']);
-	connection.query('insert into user values',  function(err, result) {
+
+/*
+* 
+*   Make sure we check the input to make sure everything is clean
+*
+*/
+
+//	console.log(response);
+	connection.query('insert into user(name, email, password, professor) values(?, ?, ?, 0)', [response['name'], response['email'], response['pass']], function(err, result) {
 	    if (err) console.log(err);
 
 	    console.log(result);

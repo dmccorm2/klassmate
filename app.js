@@ -12,6 +12,9 @@ var loginpage = require('./routes/loginpage');
 var signuppage = require('./routes/signuppage');
 var signup = require('./routes/signup');
 var login = require('./routes/login');
+var homepage = require('./routes/homepage');
+var profile = require('./routes/profile');
+var classpage = require('./routes/classpage');
 
 var app = express();
 
@@ -25,6 +28,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(function(req,res,next){
+    console.log(req.cookies);
+    next();
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(myConnection(mysql, {
@@ -40,6 +49,9 @@ app.use('/users', users);
 app.use('/signuppage', signuppage);
 app.use('/signup', signup);
 app.use('/login', login);
+app.use('/homepage', homepage);
+app.use('/profile', profile);
+app.use('/classpage', classpage);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

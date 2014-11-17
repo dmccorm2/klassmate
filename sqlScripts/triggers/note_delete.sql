@@ -1,0 +1,11 @@
+DELIMITER //
+
+CREATE TRIGGER note_delete BEFORE DELETE ON note
+FOR EACH ROW
+BEGIN
+	DELETE FROM note_keyword 
+	WHERE note_id = OLD.note_id;
+END
+//
+
+DELIMITER ;	

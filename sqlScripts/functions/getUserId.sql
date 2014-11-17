@@ -1,0 +1,15 @@
+DELIMITER //
+CREATE FUNCTION getUserId(email VARCHAR(30))
+RETURNS INT
+BEGIN
+	DECLARE ret INT;
+
+	SELECT user_id
+	INTO ret
+	FROM user 
+	WHERE email = email;
+
+	RETURN ret;
+END//
+DELIMITER ;
+

@@ -1,10 +1,12 @@
 extends layout
 
 block content
-  p#result Hello
+  p #{result} 
 
   div.loginbox
     form(name="login", action="/login", method="post")
       input(id="user", type="text", name="user", placeholder="username")
       input(id="user", type="password", name="pass", placeholder="password")
       input(type="submit", value="login")
+  br
+  a(href="signuppage") Not Registered? Sign Up Now!

@@ -1,0 +1,1 @@
+mysql --user=root --password=Klassmate Klassmate < populate.sql;

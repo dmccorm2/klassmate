@@ -1,0 +1,20 @@
+extends layout
+
+block content
+
+   //these will be the students list of current classes
+   //just have to pass class info(names to be displayed and course_id)
+   //through res.render call
+
+   each val in [1, 2, 3, 4]
+      div(style="width:100px; float: left")
+         a(href='classpage?id='+val)= 'class'+val
+
+   div(style="width:100px; float: right")
+      a(href='homepage', padding-right='100px') Home
+   div(style="width:100px; float: right")
+      a(href='profile', padding-right='100px') Profile
+
+   br
+
+   block subcontent 
